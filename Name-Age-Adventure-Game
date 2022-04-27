@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <h1> Are you going on an adventure?</h1>
+    <h3 style="font-family:Courier;color:blue;"> Find Out Here </h3>
+
+    <button onclick="myFunction()">Name</button>
+
+    <p id="demo"></p>
+
+
+    <script>
+      function myFunction() {
+        let txt;
+        let person = prompt("Please enter your name:", "Harry Potter");
+        if (person == null || person == "") {
+          txt = "User cancelled the prompt.";
+        } else {
+          txt = "Hello " + person + ", I hope you're having a good day! Click the age button if you want to discover whether you're going on an adventure...";
+        }
+        document.getElementById("demo").innerHTML = txt;
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
+
+<button onclick="myAge()">Age</button>
+<p id="trial"></p>
+
+
+<script>
+  function myAge() {
+    let txt;
+    let age = prompt("Please enter your age:", 12);
+    if (age == null || age == "") {
+      txt = "User cancelled the prompt."; // if null cancel prompt
+   } else if (age == 11) {
+      txt = "Welcome to Hogwarts! Professor McGonagall will be along to collect you shortly."; //return for 11 Hogwarts
+    } else if (age >= 50) {
+    txt = "You're going on an adventure! Say Hi to Smaug :) "; // return for age 50+
+  } else if (age > 11 && age <= 15) {
+    txt = "Go through your wardrobe, you may just find Narnia!"; // Narnia parameters 11 - 15
+   } else if (age < 11 && age >= 0) {
+    txt = "You might be a bit young for magic yet, but stay vigilant! You never know when magical nannies will appear."; // for small children
+  } else {
+  txt= "You may have missed out on a magical adventure so far, but keep checking your mailbox - Vetinari is always on the look out for useful people";
+  }
+    document.getElementById("trial").innerHTML = txt;
+
+}
+</script>
